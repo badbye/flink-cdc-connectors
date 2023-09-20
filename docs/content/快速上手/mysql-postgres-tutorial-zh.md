@@ -86,6 +86,7 @@ docker-compose up -d
 2. 创建数据库和表 `products`，`orders`，并插入数据
     ```sql
     -- MySQL
+    set global time_zone = '+8:00';
     CREATE DATABASE mydb;
     USE mydb;
     CREATE TABLE products (
@@ -224,7 +225,8 @@ Flink SQL> CREATE TABLE shipments (
    'password' = 'postgres',
    'database-name' = 'postgres',
    'schema-name' = 'public',
-   'table-name' = 'shipments'
+   'table-name' = 'shipments',
+   'slot.name' = 'flink'
  );
 ```
 
